@@ -8,6 +8,81 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello world</h1>
+    <section class="keys">
+        <div class="key" data-key="90">
+            <kbd>z</kbd>
+            <span class="sound">Bear</span>
+        </div>
+        <div class="key" data-key="88">
+            <kbd>x</kbd>
+            <span class="sound">Beast</span>
+        </div>
+        <div class="key" data-key="67">
+            <kbd>c</kbd>
+            <span class="sound">Dog 01</span>
+        </div>
+        <div class="key" data-key="86">
+            <kbd>v</kbd>
+            <span class="sound">Dog 02</span>
+        </div>
+        <div class="key" data-key="66">
+            <kbd>b</kbd>
+            <span class="sound">Duck</span>
+        </div>
+        <div class="key" data-key="78">
+            <kbd>n</kbd>
+            <span class="sound">Kitty 01</span>
+        </div>
+        <div class="key" data-key="77">
+            <kbd>m</kbd>
+            <span class="sound">Kitty 02</span>
+        </div>
+        <div class="key" data-key="188">
+            <kbd>,</kbd>
+            <span class="sound">Kitty 03</span>
+        </div>
+        <div class="key" data-key="190">
+            <kbd>.</kbd>
+            <span class="sound">Lion</span>
+        </div>
+        <div class="key" data-key="191">
+            <kbd>/</kbd>
+            <span class="sound">Wild cat</span>
+        </div>
+    </section>
+
+    <audio src="sounds/bear.wav" data-key="90"></audio>
+    <audio src="sounds/beast.wav" data-key="88"></audio>
+    <audio src="sounds/dog-01.wav" data-key="67"></audio>
+    <audio src="sounds/dog-02.wav" data-key="86"></audio>
+    <audio src="sounds/duck.wav" data-key="66"></audio>
+    <audio src="sounds/kitty-01.wav" data-key="78"></audio>
+    <audio src="sounds/kitty-02.wav" data-key="77"></audio>
+    <audio src="sounds/kitty-03.wav" data-key="188"></audio>
+    <audio src="sounds/lion.wav" data-key="190"></audio>
+    <audio src="sounds/wild-cat.wav" data-key="191"></audio>
+
+    <script>
+
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+            const key = document. querySelector(`.key[data-key='${e.keyCode}']`);
+            if (!audio) return; //Если не аудио не проигрыввается
+            audio.currentTime = 0; // Обнуляется время проигрования
+            audio.play();
+            key.classList.add('playing');
+        }
+        
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return;
+            this.classList.remove('playing');
+        }
+        
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+        
+        window.addEventListener('keydown', playSound);
+        
+    </script>
 </body>
 </html>

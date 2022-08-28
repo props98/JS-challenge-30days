@@ -1,3 +1,44 @@
 body {
-    background: yellow;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background: blue;
+    color: white;
+}
+
+kbd {
+    color: white;
+    font-size: 24px;
+}
+
+.keys {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.key {
+    width: 100px;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+.playing {
+    transform: scale(1.2);
+    border: 2px solid yellow;
+    background: rgba(255, 255, 255, .2);
+    box-shadow: 0 0 20px yellow;
+    color: yellow;
+}
+
+.sound {
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
