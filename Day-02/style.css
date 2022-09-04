@@ -17,6 +17,12 @@ body {
     border: 15px solid #000;
     border-radius: 50%;
     padding: 10px;
+    
+    box-shadow: 
+        0 0 0px 4px rgba(0, 0, 0, .1),
+        inset 0 0 0 3px #000,
+        inset 0 0 20px #fff,
+        0 0 10px rgba(0, 0, 0, .2);
 }
 
 .clock-face {
@@ -25,9 +31,21 @@ body {
     position: relative;
 }
 
+.clock-face:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .hand {
     width: 50%;
-    height: 6px;
+    height: 3px;
     background: #000;
     position: absolute;
     top: 50%;
@@ -35,4 +53,15 @@ body {
     transform: rotate(90deg);
     transition: all .05s;
     transition-timing-function: cubic-bezier(0,3.51,0,.19);
+}
+
+.min-hand {
+    height: 10px;
+}
+
+.hour-hand {
+    width: 40%;
+    height: 16px;
+    top: 190px;
+    left: 35px;
 }
