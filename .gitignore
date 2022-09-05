@@ -1,0 +1,10 @@
+# dependecies
+/node_modules
+
+# other files
+.DS_Store
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
