@@ -9,10 +9,42 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Day 4</h1>
+    <div class="panels">
+        <div class="panel panel-1">
+            <h2>Let's</h2>
+            <h2>Hi</h2>
+            <h2>Dance</h2> 
+        </div>
+        <div class="panel panel-2">
+            <h2>Let's</h2>
+            <h2>Hello</h2>
+            <h2>Dance</h2> 
+        </div>
+        <div class="panel panel-3">
+            <h2>Let's</h2>
+            <h2>ALoha</h2>
+            <h2>Dance</h2> 
+        </div>
+        <div class="panel panel-4">
+            <h2>Let's</h2>
+            <h2>Привет</h2>
+            <h2>Dance</h2> 
+        </div>
+        <div class="panel panel-5">
+            <h2>Let's</h2>
+            <h2>Bonjure</h2>
+            <h2>Dance</h2> 
+        </div>
+    </div>
 
     <script>
-        
+         const panels = document.querySelectorAll('.panels');
+
+         function toggleOpen() {
+            this.classlist.toggle('open');
+         }
+
+         panels.forEach(panel => panel.addEventListener('click', toggleOpen));
     </script>
 </body>
 </html>
