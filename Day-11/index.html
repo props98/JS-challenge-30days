@@ -10,18 +10,19 @@
 <body>
     <h1>Day 11</h1>
     <div class="player">
-        <video class="player__video viewer" width="800" src="source/motion-coube.mov"></video>
+        <video class="player__video viewer" src="source/motion-coube.mov"></video>
 
         <div class="player__controls">
             <div class="progress">
                 <div class="progress__filled"></div>
             </div>
-            <button class="player__button toggle" title="Toggle play">▶︎</button>
+            <button class="player__button toggle" title="Toggle play">▶️</button>
             <input class="player__slider"  type="range" name="volume" min="0" max="1" step="0.5" value="1">
             <input class="player__slider"  type="range" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
-            <button data-skip="-10" class="player__button">⇠ 10s</button>
-            <button data-skip="25" class="player__button">25s ⇢</button>
+            <button data-skip="-5" class="player__button">⇠ -5s</button>
+            <button data-skip="5" class="player__button">5s ⇢</button>
         </div>
+        
     </div>
 
     <script src="script.js"></script>
