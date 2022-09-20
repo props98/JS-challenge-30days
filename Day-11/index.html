@@ -5,22 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 11</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            text-align: center;
-            color: #000;
-            background: yellow;
-        }
-        h1 {
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Day 11</h1>
@@ -34,8 +19,8 @@
             <button class="player__button toggle" title="Toggle play">▶︎</button>
             <input class="player__slider"  type="range" name="volume" min="0" max="1" step="0.5" value="1">
             <input class="player__slider"  type="range" name="playbackRate" min="0.5" max="2" step="0.1" value="1">
-            <button class="player__button" data-skip="-10">⇠ 10s</button>
-            <button class="player__button" data-skip="25">25s ⇢</button>
+            <button data-skip="-10" class="player__button">⇠ 10s</button>
+            <button data-skip="25" class="player__button">25s ⇢</button>
         </div>
     </div>
 
