@@ -27,12 +27,9 @@ team[0] = 'Tony';
 
 
 //? now here is the problem!
-
 //? oh no - we have edited the original array too!
-
 //? why? It's because that is an array reference, not an array copy.
 //? The both pont to the some array!
-
 //? So, how do we fix this? We take a copy insteed!
 const team2 = players.slice();
 team2[0] = 'LEX';
@@ -41,7 +38,6 @@ team2[0] = 'LEX';
 // console.log(team2);
 
 //? one day
-
 //? or create a new array and concat the old one in
 const team3 = [].concat(players);
 
@@ -54,10 +50,9 @@ const team5 = Array.from(players);
 
 //? now when we update it, the original one isn't changed
 
+
+
 //? the same thing goes for objects, let's say we have a person object
-
-
-
 //? with Objects
 const person = {
     name: 'Wes Bos',
