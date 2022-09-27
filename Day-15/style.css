@@ -2,3 +2,105 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    font-family: sans-serif;
+}
+
+body:after {
+    content: '';
+    background: url(./img/restaurant.jpg) center / cover no-repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
+.container__form {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, .9);
+    box-shadow: 0 0 0 10px rgna(0, 0, 0, .5);
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    letter-spacing: 0.2rem;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.container__img {
+    width: 90px;
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, .9);
+    padding: 16px 10px 10px 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.plates-list {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plates-list li {
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(149, 149, 149, .7)
+}
+
+.plates-list input[type="checkbox"] {
+    display: none;
+}
+
+.plates-list input + label:before {
+    content: '🤌';
+    margin-right: 12px;
+}
+
+.plates-list input:checked + label:before {
+    content: '🍕'
+}
+
+.add-items input {
+    margin-top: 1rem;
+    padding: 1rem;
+    outline: 0;
+    border: 1px solid rgna(70, 78, 70, .6);
+}
+
+.add-items input[type="submit"] {
+    background: #431903;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+}
+
