@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 17</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+            background: url(./img/bg.jpg) center center / cover no-repeat;
+        }
+
+        #bands {
+            min-width: 500px;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        ul li {
+            border-bottom: 1px solid rgb(193, 193, 193);
+            list-style: inside square;
+            padding: 20px;
+        }
+
+        ul li:hover {
+            background: tomato;
+            color: #fff;
+        }
+
+        ul li:last-child {
+            border-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sorting Band Names without articles</h1>
+
+    <ul id="bands">
+
+    </ul>
+
+    <script>
+
+        const bands = ['The Plot in You', 'The Devil Wears Prads', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+        function strip(bandName) {
+            return bandName.replace(/^( a |the |an )/i, '').trim();
+        }
+
+        const sortedBands = bands.sort((a, b) => {
+            // Тернарный оператор
+            return strip(a) > strip(b) ? 1 : -1;
+
+            // if (strip(a) > strip(b)) {
+            //     return 1;
+            // } else {
+            //     return -1
+            // }
+        });
+
+        document.querySelector('#bands').innerHTML = sortedBands.map((band) => {
+            return `<li>${band}</li>`;
+        }).join('');
+
+        console.log(sortedBands);
+    </script>
+</body>
+</html>
