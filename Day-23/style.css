@@ -1,3 +1,74 @@
 body {
     background: tomato;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    width: calc(100%/2 + 6px);
+    margin: 0;
+    background: #ffc600;
+    text-align: center;
+    font-size: 3rem;
+    padding: 20px 0 20px 0;
+    margin-top: 50px;
+    border-radius: 5px;
+    margin-bottom: -5px;
+}
+
+.voiceinator {
+    width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: #fff;
+}
+
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    border: none;
+    flex: 2rem;
+    outline: 0;
+    background: #f7f7f7;
+}
+
+select {
+    height: 30px;
+    font-size: 1rem;
+}
+
+.voiceinator button {
+    background: #ffc600;
+    border: 0;
+    width: 49%;
+    float: left;
+    font-size: 2rem;
+    margin-bottom: 0;
+    border-bottom: 5px solid #f3c010;
+    cursor: pointer;
+    position: relative;
+    background: #f7f7f7;
+}
+
+textarea {
+    height: 20rem;
+}
+
+.voiceinator button:active {
+    top: 2px;
+}
+
+.voiceinator button:nth-of-type(1) {
+    margin-right: 2%;
 }
