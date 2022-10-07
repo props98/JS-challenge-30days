@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 25</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+        }
+        body {
+            text-align: center;
+        }
+        div {
+            width: 100%;
+            padding: 100px;
+        }
+        .one {
+            background: thistle;
+        }
+        .two {
+            background: mistyrose;
+        }
+        .three {
+            background: tomato;
+        }
+        button {
+            background: tomato;
+            padding: 20px;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            border: none;
+            display: inline-block;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Capture, Propagation, Bubbling and Once</h1>
+
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                
+            </div>
+        </div>
+    </div>
+
+    <button>Click me once</button>
+
+    <script>
+        const divs = document.querySelectorAll('div');
+
+        function logText(e) {
+            e.stopPropagation(); // stop bubbling!
+            console.log(this.classList.value);
+        }
+
+        divs.forEach(div => div.addEventListener('click', logText, {
+            capture: false,
+            once: true
+        }));
+
+        const btn = document.querySelector('button');
+
+        btn.addEventListener('click', () => {
+            console.log('Click');
+        }, {
+            once: false
+        })
+
+    </script>
+</body>
+</html>
