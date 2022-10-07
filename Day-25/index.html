@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 25</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+        }
+        div {
+            width: 100%;
+            padding: 100px;
+        }
+        .one {
+            background: thistle;
+        }
+        .two {
+            background: mistyrose;
+        }
+        .three {
+            background: tomato;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Event Capture, Propagation, Bubbling and Once</h1>
+
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const divs = document.querySelectorAll('div');
+
+        function logText(e) {
+            console.log(this.classList.value);
+        }
+
+        divs.forEach(div => div.addEventListener('click', logText)); 
+        
+    </script>
 </body>
 </html>
