@@ -62,6 +62,14 @@ nav ul {
     will-change: transform;
 }
 
+.trigger-enter .dropdown {
+    display: block;
+}
+
+.trigger-enter-active .dropdown {
+    opacity: 1;
+}
+
 .dropdownBackground {
     width: 100px;
     height: 100px;
@@ -74,6 +82,10 @@ nav ul {
     display: flex;
     justify-content: center;
     opacity: 0;
+}
+
+.dropdownBackground.open {
+    opacity: 1;
 }
 
 .arrow {
@@ -97,7 +109,7 @@ nav ul {
 
 .info p img {
     float: left;
-    width: 150px;
+    width: 100px;
     margin-right: 20px;
 }
 
