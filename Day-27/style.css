@@ -10,6 +10,9 @@ body {
     font-family: sans-serif;
     font-size: 20px;
     margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 *,
@@ -19,43 +22,50 @@ body {
 }
 
 .container {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     margin: 0 auto;
     width: 80%;
-    height: 800px;
-    padding: 30px;
+    height: 500px;
+    padding-top: 60px;
     border: 1px solid white;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
     user-select: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all .2s;
     transform: scale(.98);
     will-change: transform;
     position: relative;
-    background: rgb(212, 212, 212);
+    /* background: rgb(212, 212, 212); */
     font-size: 0;
     perspective: 500px;
 }
+.container.active {
+    background: rgba(255,255,255, .3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
 
 .item {
-    width: 300px;
-    height: calc(100% - 40px);
+    width: 250px;
+    height: calc(100% - 60px);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: grey;
     font-size: 40px;
-    border: 2px solid rgba(25, 0, 255, 0.5)
+    border: 2px solid rgba(25, 0, 255, 0.5);
+    margin-right: 20px;
 }
 
 .item:nth-child(even) {
     background: gold;
-    transform: scaleX(1.31) rotateY(40deg);
+    /* transform: scaleX(1.31) rotateY(40deg); */
 }
 .item:nth-child(odd) {
     background: rebeccapurple;
-    transform: scaleX(1.31) rotateY(-40deg);
+    /* transform: scaleX(1.31) rotateY(-40deg); */
 }
