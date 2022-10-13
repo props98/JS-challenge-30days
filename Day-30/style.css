@@ -1,0 +1,76 @@
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: tomato;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 7rem;
+    line-height: 1;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.score {
+    background: rgba(255,255,255, .2);   
+    padding: 1rem 3rem;
+    padding-bottom: 0;
+    line-height: 1;
+    border-radius: 1rem;
+}
+
+button {
+    margin: auto;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.game {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.hole:after {
+    display: block;
+    background: url(./img/land.png) bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 2;
+    bottom: -2px;
+}
+
+.mole {
+    background: url(./img/pikachu.png) bottom center no-repeat;
+    background-size: 12%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all .4s;
+}
+
+.hole.up .mole {
+    top: 0;
+}
